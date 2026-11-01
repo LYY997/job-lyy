@@ -60,4 +60,6 @@ if len(df_exp) > 0:
 
 # ---- 数据表 ----
 st.subheader("筛选后数据预览")
-st.dataframe(filtered[['job_title', 'city', 'education', 'experience', 'salary_K']].head(20))
+df_show = filtered[['job_title', 'city', 'education', 'experience', 'salary_K']].head(20).copy()
+df_show = df_show.astype(str)  
+st.dataframe(df_show)
